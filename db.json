@@ -1,0 +1,16 @@
+{
+  "repositories": [
+    {
+      "a": "test",
+      "id": 1
+    },
+    {
+      "b": "test",
+      "id": 2
+    },
+    {
+      "c": "test",
+      "id": 10
+    }
+  ]
+}
