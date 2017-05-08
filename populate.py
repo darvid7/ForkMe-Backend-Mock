@@ -33,14 +33,23 @@ print('count items returned: ' + str(results['total_count']))
 repos = results['items']
 print('count repos returned: ' + str(len(repos)))
 
+json_data = []
+
+headers = {"Content-Type": "application/json"}
 for repo in repos:
 	print('repo name: ' + str(repo['full_name']), end=", ")
 	print('stars: ' + str(repo['stargazers_count']), end=", ")
 	print('watchers: ' + str(repo['watchers_count']), end='\n')
 	# Assume full name can be used to uniquely identify repositories (might need to change for implementation that looks back in time).
-	data = repo['full_name']: repo
-	requests.post(json_server_endpoint, data=data)
+	data = {repo['full_name']: repo}
+	jsonify = json.dumps(data)
+	requests.post(json_server_endpoint, data=jsonify, headers=headers)
+	time.sleep(1)
+	json_data.append(jsonify)
+
+with open('dict_to_json.txt', 'w') as fh:
+	for l in json_data:
+		fh.write(l)
 
 with open('query_response.txt', 'w') as fh:
 	fh.write(text)
-
