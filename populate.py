@@ -66,7 +66,7 @@ for repo in repos:
 			# Add key.
 			repo_dict[key] = value
 
-	data = {repo['full_name']: repo_dict}
+	data = repo_dict
 	jsonify = json.dumps(data)
 	requests.post(json_server_endpoint, data=jsonify, headers=headers)
 	time.sleep(1)
