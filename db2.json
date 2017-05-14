@@ -1,25 +1,28 @@
 {
-  "repositories": [
-    {
-      "size": 48,
-      "full_name": "basecamp/handbook",
-      "stargazers_count": 2323,
-      "description": "Basecamp Employee Handbook",
-      "id": 1
-    },
-    {
-      "size": 514,
-      "full_name": "pojala/electrino",
-      "stargazers_count": 1255,
-      "description": "Desktop runtime for apps built on web technologies, using the system's own web browser engine",
-      "id": 2
-    },
-    {
-      "size": 14,
-      "full_name": "gajus/prepack-webpack-plugin",
-      "stargazers_count": 636,
-      "description": "A webpack plugin for prepack.",
-      "id": 3
-    }
-  ]
+  "all_repos" : {
+    "repositories": [
+      {
+        "size": 48,
+        "full_name": "basecamp/handbook",
+        "stargazers_count": 2323,
+        "description": "Basecamp Employee Handbook",
+        "id": 1
+      },
+      {
+        "size": 514,
+        "full_name": "pojala/electrino",
+        "stargazers_count": 1255,
+        "description": "Desktop runtime for apps built on web technologies, using the system's own web browser engine",
+        "id": 2
+      },
+      {
+        "size": 14,
+        "full_name": "gajus/prepack-webpack-plugin",
+        "stargazers_count": 636,
+        "description": "A webpack plugin for prepack.",
+        "id": 3
+      }
+    ]
+  }
+  
 }
