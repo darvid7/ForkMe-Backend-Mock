@@ -33,6 +33,11 @@ print('count items returned: ' + str(results['total_count']))
 repos = results['items']
 print('count repos returned: ' + str(len(repos)))
 
+# Add to as a repository.
+go_query = requests.get("https://api.github.com/repos/golang/go")
+go = json.loads(go_query.text)
+repos.append(go)
+
 json_data = []
 
 headers = {"Content-Type": "application/json"}
