@@ -2,10 +2,10 @@ import requests
 import datetime
 import time
 import json
-
+# Accept to allow for topics.
 headers = {
-	"Content-Length": "0",
-	"Authorization": "token MY_OAUTH_TOKEN"
+	"Authorization": "token TOKEN",
+	"Accept": "application/vnd.github.mercy-preview+json"
 }
 
 today = datetime.datetime.now()
@@ -46,6 +46,8 @@ except KeyError:
 # Note: subscribers_count is not in repo responses from the Github API search query.
 repo_tuples = [repo['full_name'].split('/') for repo in repos]  # List of lists of form [[owner, repo], ..]
 repo_tuples.insert(0, ["golang", "go"])
+repo_tuples.insert(0, ["darvid7", "forkme"])
+repo_tuples.insert(0, ["tensorflow", "tensorflow"])
 
 query = "https://api.github.com/repos/%s/%s" 
 repos_full_data = []
@@ -67,7 +69,7 @@ relvant_fields = [
 	"size", "full_name", "stargazers_count", "homepage", "description", "forks_count", "owner",
 	"id", "organizations_url", "avatar_url", "html_url", "url", "followers_url", "login", "type",
 	"repos_url", "gravatar_id", "created_at", "language", "open_issues_count", "score", "updated_at",
-	"has_wiki", "subscribers_count"
+	"has_wiki", "subscribers_count", "topics"
 ]
 
 print ("Adding to json server");
